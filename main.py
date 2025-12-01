@@ -20,7 +20,8 @@ from utils.channel import (
     get_channel_items,
     append_total_data,
     test_speed,
-    write_channel_to_file, sort_channel_result,
+    write_channel_to_file,
+    sort_channel_result
 )
 from utils.config import config
 from utils.tools import (
@@ -114,6 +115,7 @@ class UpdateSource:
             main_start_time = time()
             if config.open_update:
                 self.channel_items = get_channel_items()
+                self.channel_data = {}
                 channel_names = [
                     name
                     for channel_obj in self.channel_items.values()
